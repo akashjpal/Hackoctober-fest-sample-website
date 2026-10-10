@@ -1,0 +1,383 @@
+// Main SCSS file for Hacktoberfest 2026 website
+
+// Variables
+$primary-color: #aa3bff;
+$primary-bg: rgba(170, 59, 255, 0.1);
+$text-color: #333;
+$text-light: #666;
+$bg-color: #fff;
+$border-color: #e5e4e7;
+$font-stack: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+$link-color: #767676;
+$link-hover-color: #8a8a8a;
+
+// Reset
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  color: $text-color;
+  background: $bg-color;
+  line-height: 1.6;
+}
+
+// App layout
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+:focus {
+  outline: none;
+}
+
+.skip-nav {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: $primary-color;
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+
+  &:focus {
+    top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .navbar {
+    border-bottom: 1px solid CanvasText;
+  }
+  .feature-card {
+    border: 1px solid CanvasText;
+  }
+}
+
+// Navbar
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #f8f8f8;
+  border-bottom: 1px solid $border-color;
+
+  &-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &-logo {
+    text-decoration: none;
+    color: $text-color;
+  }
+
+  &-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
+}
+
+.nav-link {
+  text-decoration: none;
+  color: $link-color;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+
+  &:hover {
+    background: $primary-bg;
+    color: $link-hover-color;
+  }
+
+  &.active {
+    background: $primary-bg;
+    font-weight: bold;
+  }
+}
+
+// Main content
+#main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+// Page styles
+.page {
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #08060d;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    color: #08060d;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    margin: 1rem 0 0.5rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+    color: $text-color;
+  }
+}
+
+// Hero section
+.hero-section {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, $primary-bg, transparent);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+// Features
+.features-section {
+  margin: 3rem 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background: #fafafa;
+
+  h3 {
+    margin-bottom: 0.5rem;
+  }
+}
+
+// Participation
+.participation-section {
+  margin: 3rem 0;
+
+  ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+.cta-section {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background: $primary-color;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+
+  a {
+    padding: 0.75rem 1.5rem;
+    background: $primary-bg;
+    color: $text-color;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background: rgba(170, 59, 255, 0.2);
+    }
+  }
+}
+
+// Testimonials
+.testimonials-section {
+  margin: 3rem 0;
+
+  blockquote {
+    border-left: 4px solid $primary-color;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: $text-light;
+
+    p {
+      font-style: italic;
+    }
+
+    cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: bold;
+    }
+  }
+}
+
+// About page
+.about-hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(135deg, $primary-bg, transparent);
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.about-details {
+  margin: 2rem 0;
+
+  h2 {
+    margin-top: 2rem;
+  }
+
+  ul {
+    margin-left: 1.5rem;
+    margin: 1rem 0;
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+// Team
+.team-section {
+  margin: 3rem 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.team-member {
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+
+  img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin: 1rem 0 0.25rem;
+  }
+}
+
+// Contact form
+.contact-section {
+  margin: 3rem 0;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+
+    div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+
+    input,
+    textarea {
+      padding: 0.75rem;
+      border: 1px solid $border-color;
+      border-radius: 4px;
+      font-family: $font-stack;
+      font-size: 1rem;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background: $primary-color;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      align-self: flex-start;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+// Footer
+.site-footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #f8f8f8;
+  border-top: 1px solid $border-color;
+  color: $text-light;
+  font-size: 0.8rem;
+}
