@@ -7,7 +7,8 @@ function Home() {
           Hacktoberfest is a celebration of open source software. 
           This year, we're making it bigger and better than ever!
         </p>
-        <img src="/hacktoberfest-banner.png" />
+        <img src="/hacktoberfest-banner.png" alt="" />
+        {/* a11yfix: issue_image-alt__img_src___hacktober (image-alt) */}
       </section>
 
       <section className="features-section">
