@@ -46,7 +46,7 @@ function Home() {
           <li>Get your free Hacktoberfest swag!</li>
         </ul>
         <div className="cta-section">
-          <button>Register Now</button>
+          <button style={{ backgroundColor: '#0056b3', color: '#ffffff' }}>Register Now</button>
           <a href="https://hacktoberfest.com">Learn More</a>
         </div>
       </section>
