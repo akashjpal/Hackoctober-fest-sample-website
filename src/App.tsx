@@ -6,6 +6,11 @@ import Navbar from './components/Navbar'
 function App() {
   return (
     <div className="app">
+      <style>{`
+        .nav-link {
+          color: #1a1a1a;
+        }
+      `}</style>
       <Navbar />
       <main id="main-content">
         <Routes>
